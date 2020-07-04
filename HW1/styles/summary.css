@@ -12,6 +12,10 @@ nav a {
 }
 
 #first_nav_button a {
+    padding-left: 40px;
+}
+
+#current_page a {
     color: orange; 
 }
 
@@ -22,9 +26,12 @@ nav a {
     list-style: none;
     position: relative;
     margin: 0 auto;
-    padding: 0px 8.4px 0px 0px;
+    padding: 0px 8.3px 0px 0px;
     background: #333;
     display: inline-block;
+}
+#nav_bar {
+    width: 697px;
 }
 
 #nav_menu ul li { float: left; }
