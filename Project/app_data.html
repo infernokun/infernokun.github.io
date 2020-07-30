@@ -1,0 +1,72 @@
+<html>
+
+    <header>
+        <title></title>
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/app.css">
+        
+        <script type="text/javascript">
+            var decode = function ( text ) {
+            text = text.replace(/\+/g, " ");
+                text = text.replace(/%[a-fA-F0-9]{2}/g, function ( text ) {
+                    return String.fromCharCode( "0x" + text.substr(1,2));
+                });
+                return text;
+            }
+    
+            var display_data = function () {
+                var query = location.search.replace("?", "");
+                if ( query == "" ) return;
+                var fields = query.split("&");
+                
+                if ( fields.length == 0 ) {
+                    document.write("<p>No data was submitted.</p>");
+                } else {
+                    document.write("<dl>");
+                    var field_parts;
+                    for ( var i in fields ) {
+                        field_parts = fields[i].split("=");
+                        field_parts[0] = decode( field_parts[0] );
+                        field_parts[1] = decode( field_parts[1] );
+                        document.write("<dt>" + field_parts[0] + "</dt>");
+                        document.write("<dd>" + field_parts[1] + "</dd>");
+                    }
+                    document.write("</dl>");
+                }
+            }
+        </script>
+        
+        <img id="logo" src="images/AUM.png">
+        
+        <h1>AUM College of Sciences</h1>
+        
+    </header>
+    
+    <nav id="nav_bar">
+        <ul>
+            <li id="button1"><a href="index.html">HOME</a></li>
+            <li id="button2"><a href="more.html">LEARN MORE</a></li>
+            <li id="button3"><a>TEACHING ASSISTANT APPLICATION</a></li>
+            <li id="button4"><a href="gpa.html">GPA CALCULATOR</a></li>
+            <li id="button5"><a href="optional.html">OPTIONAL</a></li>
+        </ul>
+    </nav>
+    
+    <body>
+        <main>
+            
+            <h2>Teaching Assistant Application</h2>
+
+            <script>display_data();</script>
+            
+        </main>
+    </body>
+    
+<footer>
+        <p>&copy; copyright Javoris Brown</p>
+        <p class="info">7400 East Drive</p><br>
+        <p class="info">Montgomery, AL 36117</p><br>
+        <p class="info">Local: 334-244-3000</p><br>
+        <p class="info">Toll-Free: 800-227-2649</p>
+    </footer>
+</html>
