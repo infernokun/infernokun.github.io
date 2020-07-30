@@ -1,0 +1,186 @@
+<html>
+
+    <header>
+        <title>AUM Computer Science</title>
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/gpa.css">
+        <script src="http://code.jquery.com/jquery-3.5.1.js"> </script>
+        <script>
+            $(document).ready(function() {
+                $("#calculate").click(function() {
+                    
+                    var classMap = [];
+                    var totalCredits = 0;
+                    var count = 0;
+                    var gpa = 0;
+        
+        
+                    $(".credit_hours").each(function(evt) {
+                        if($(this).val() != "") {
+                            totalCredits += parseInt($(this).val());
+                            classMap[count] = parseInt($(this).val());
+                
+                            count++;
+                        }
+                    });
+        
+                    if (count >= 2) {
+                        var numGrade = 0;
+                        var gradeTimesHour = 0;
+                        count = 0;
+            
+                        $(".letter_grade").each(function(evt) {
+                    
+                            if($(this).val() != "Select") {
+                    
+                                switch($(this).val()) {
+                                    case "A":
+                                        numGrade = 4;
+                                        break;
+                                    case "B":
+                                        numGrade = 3;
+                                        break;
+                                    case "C":
+                                        numGrade = 2;
+                                        break;
+                                    case "D":
+                                        numGrade = 1;
+                                        break;
+                                    case "F":
+                                        numGrade = 0;
+                                        break;
+                                    default:
+                                        alert("Error");
+                                }
+                                if (classMap.length > count) {
+                                    gradeTimesHour += (numGrade * classMap[count]);
+                                    count++;
+                    
+                                    gpa = gradeTimesHour/totalCredits;
+                                }
+                            }
+                        });
+                        $("#gpa").text("Your GPA is: " + gpa.toFixed(1));
+                    } else {
+                        alert("Please enter at least 2 classes!")
+                    }
+                });
+            });
+        </script>
+        
+        <img id="logo" src="images/AUM.png">
+        
+        <h1>AUM College of Sciences</h1>
+        
+    </header>
+    
+    <nav id="nav_bar">
+        <ul>
+            <li id="button1"><a href="index.html">HOME</a></li>
+            <li id="button2"><a href="more.html">LEARN MORE</a></li>
+            <li id="button3"><a href="app.html">TEACHING ASSISTANT APPLICATION</a></li>
+            <li id="button4"><a>GPA CALCULATOR</a></li>
+            <li id="button5"><a href="optional.html">OPTIONAL</a></li>
+        </ul>
+    </nav>
+    
+    <body>
+        <main>
+            <h1>GPA Calculator</h1>
+            <h2>Enter at least 2 classes</h2>
+            
+            
+            <form id="content">
+                <label>Credit Hours:</label>
+                <input type="number" class="credit_hours" autofocus>
+                
+            
+                <label>Letter Grade:</label>
+                
+                <select class="letter_grade">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select><br>
+                
+                <!-- CLASS 2 -->
+                <label for="credit_hours">Credit Hours: </label>
+                <input type="number" class="credit_hours">
+            
+                <label>Letter Grade: </label>
+                
+                <select class="letter_grade">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select><br>
+                
+                <!-- CLASS 3 -->
+                <label>Credit Hours: </label>
+                <input type="number" class="credit_hours">
+            
+                <label for="letter_grade">Letter Grade: </label>
+                
+                <select class="letter_grade">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select><br>
+                
+                <!-- CLASS 4 -->
+                <label>Credit Hours: </label>
+                <input type="number" class="credit_hours">
+            
+                <label for="letter_grade">Letter Grade: </label>
+                
+                <select class="letter_grade">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select><br>
+                
+                <!-- CLASS 5 -->
+                <label>Credit Hours: </label>
+                <input type="number" class="credit_hours">
+            
+                <label>Letter Grade: </label>
+                
+                <select class="letter_grade">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select><br>
+                
+                
+                <button id="calculate" type="button" onclick="calculate">Calculate</button>
+                <input type="reset" value="Reset">
+            </form>
+            
+
+            <h2 id="gpa">Your GPA is:</h2>
+        </main>
+    </body>
+    
+    <footer>
+        <p>&copy; copyright Javoris Brown</p>
+        <p class="info">7400 East Drive</p><br>
+        <p class="info">Montgomery, AL 36117</p><br>
+        <p class="info">Local: 334-244-3000</p><br>
+        <p class="info">Toll-Free: 800-227-2649</p>
+    </footer>
+</html>
