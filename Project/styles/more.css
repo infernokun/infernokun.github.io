@@ -1,0 +1,151 @@
+html {
+    background-color: #a5a5a5;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    //width: 1519px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: monospace;
+    
+}
+
+header {
+    background-color: #a5a5a5;
+    padding-bottom: 40px;
+    padding-left: 200px;
+    height: 60px;
+    background-color: white;
+}
+
+#logo {
+    float: left;
+    margin: 8px 0px 0px 25px;
+    width: 250px;
+}
+
+header h1 {
+    padding: 40px 0px 0px 301px;
+    font-size: 190%;
+}
+
+#nav_bar {
+    list-style: none;
+    position: relative;
+    margin: 0 auto;
+    background-color: #777478;
+    display: inline-block;
+}
+
+#nav_bar ul {
+    width: 1060px;
+    //width: 1469px;
+}
+
+#button1 a, #button3 a, #button4 a, #button5 a {
+    color: deepskyblue;
+}
+
+#button1 a:hover, #button3 a:hover, #button4 a:hover, #button5 a:hover {
+    color: yellow;
+}
+
+#button2 a {
+    color: white;
+}
+
+#button1 a, #button2 a, #button3 a, #button4 a, #button5 a {
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+}
+
+#button1 a {
+    margin-left: 126px;
+}
+
+#nav_bar ul li {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120%;
+}
+main {
+    float: left;
+    width: 750px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+main h1, main h2 {
+    color: #b27300;
+}
+
+main p, main h1, main h2 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+main p, main h1, main h2 {
+    text-align: center;
+}
+
+main table {
+    position: relative;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+aside {
+    float: right;
+    width: 350px;
+    //height: 1044px;
+    padding-bottom: 352px;
+    font-family:sans-serif;
+    background-color: #c2c2c2;
+}
+aside ul li {
+    display: inline;
+    padding-left: 44px;
+}
+aside ul {
+
+    padding: 0;
+}
+
+aside h3 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 140%;
+}
+
+aside table tr td {
+    font-size: 70%;
+}
+
+aside table tr td {
+    padding-left: 27px;
+    padding-bottom: 10px
+}
+
+aside table tr {
+    border: none;
+}
+
+tr, th {
+    border: 1px solid black;
+    padding: .2em 1em .2em .5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer {
+    background-color: #8f8f8f;
+    padding: 5px 5px 25px 5px;
+}
+
+.info {
+    padding: 0px;
+    margin: 0px;
+    float: right;
+}

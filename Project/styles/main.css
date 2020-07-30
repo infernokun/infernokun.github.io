@@ -1,0 +1,160 @@
+html {
+    background-color: #a5a5a5;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    //width: 1519px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: monospace;
+}
+
+header {
+    background-color: #a5a5a5;
+    padding-bottom: 40px;
+    padding-left: 200px;
+    height: 60px;
+    background-color: white;
+}
+
+#logo {
+    float: left;
+    margin: 8px 0px 0px 25px;
+    width: 250px;
+}
+
+header h1 {
+    padding: 40px 0px 0px 301px;
+    font-size: 190%;
+}
+
+#nav_bar {
+    list-style: none;
+    position: relative;
+    margin: 0 auto;
+    background-color: #777478;
+    display: inline-block;
+}
+
+#nav_bar ul {
+    width: 1060px;
+    //width: 1469px;
+}
+
+#button2 a, #button3 a, #button4 a, #button5 a {
+    color: deepskyblue;
+}
+
+#button2 a:hover, #button3 a:hover, #button4 a:hover, #button5 a:hover {
+    color: yellow;
+}
+
+#button1 a, #button2 a, #button3 a, #button4 a, #button5 a {
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+}
+
+#button1 a {
+    color: white;
+    margin-left: 126px;
+}
+
+#nav_bar ul li {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120%;
+}
+
+aside {
+    float: right;
+    background-color: yellow;
+    width: 200px;
+    border: 5px solid black;
+}
+
+main {
+    font-family:sans-serif;
+    top: 100%;
+    //width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+#img1 {
+    //height: 472px;
+    //height: 776px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#img_container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.img_text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    margin: 0px;
+    font-size: 80px;
+    text-shadow: 2px 1px 0 #000, -2px -3px 0 #000, -2px 3px 0 #000, -2px 2px 0 #000;
+}
+
+
+#text1 {
+    top: 25%;
+    left: 50%;
+}
+
+#text2 {
+    top: 40%;
+    left: 50%;
+    
+}
+
+#text3 {
+    top: 55%;
+    left: 50%;
+}
+
+#text4 {
+    top: 70%;
+    left: 50%;
+}
+
+main h1 {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    color: #b27300;
+}
+
+main .infotext {
+    text-align: center;
+    margin: 0px 120px 0px 120px;
+    padding: 5px;
+}
+
+.bodyimages {
+    height: 187px;
+}
+
+footer {
+    background-color: #8f8f8f;
+    padding: 5px 5px 25px 5px;
+}
+
+.info {
+    padding: 0px;
+    margin: 0px;
+    float:right;
+}
