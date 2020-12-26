@@ -36,18 +36,16 @@ function loadList(array) {
 // adds to to-do list
 function addToDo(toDo, id, done, trash) {
 
-    if (trash) return
+    if (trash) { return; }
 
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
 
-    const item = `
-                <li class="item">
+    const item = `<li class="item">
                     <img class="done" src="${DONE}" job="complete" id="${id}">
                     <p class="text ${LINE}">${toDo}</p>
                     <img class="delete" src="img/trash.png" job="delete" id="${id}"> 
-                </li>
-                `;
+                </li>`;
 
     const pos = "beforeend";
 
