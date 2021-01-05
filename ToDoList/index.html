@@ -6,8 +6,10 @@
     <title>To Do List - JS</title>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web">
     <link href="css/main.css" rel="stylesheet">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+    <p id="info"></p>
     <div class="container">
         <div class="header">
             <div class="clear">
@@ -16,6 +18,11 @@
             <div id="date"></div>
         </div>
         <div class="content">
+            <form name="historyForm">
+                <label>History</label>
+                <select id="history"></select>
+                <button type="submit" onclick="historyChange();return false">Submit</button>
+            </form>
             <ul id="list">
             </ul>
         </div>
@@ -24,6 +31,5 @@
             <input type="text" id="input" placeholder="Add a to do">
         </div>
     </div>
-    <script src="js/main.js"></script>
 </body>
 </html>

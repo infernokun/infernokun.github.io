@@ -5,6 +5,9 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 const done = document.getElementById("done");
 const add = document.getElementById("add");
+const history = document.getElementById("history");
+const historyForm = document.getElementById("historyForm");
+const info = document.getElementById("info");
 
 // variables
 const CHECK = "img/check-mark.png";
@@ -12,24 +15,85 @@ const UNCHECK = "img/circle.png";
 const LINE_THROUGH = "lineThrough";
 
 // date handling
-const options = {weekday:"long", month:"long", day:"numeric"};
+const options = { weekday: "long", month: "long", day: "numeric" };
 const today = new Date();
+const today_date = today.toLocaleDateString("en-US", options);
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
-let LIST = [], id = 0;
+let LIST = [], id = 0, ALL_LIST = [];
 let data = localStorage.getItem("TODO");
+
+let current_list = 0;
+let viewing_history = false;
 
 // check if data exists
 if (data) {
-    LIST = JSON.parse(data);
-    id = LIST.length;
-    loadList(LIST);
+    ALL_LIST = JSON.parse(data);
+
+    id = ALL_LIST[current_list].length;
+
+    loadList(ALL_LIST);
+} else {
+    loadList(ALL_LIST);
+
+    current_list = ALL_LIST.length;
+
+    if (ALL_LIST[current_list] == undefined) {
+        let LIST = []
+        ALL_LIST.push(LIST);
+    }
+}
+
+// upon form submit for history change
+function historyChange() {
+    list.innerHTML = "";
+
+    history_id = history.value;
+
+    if (history_id == current_list) {
+        viewing_history = false;
+        loadListHistory(ALL_LIST, history_id);
+    } else {
+        viewing_history = true;
+        loadListHistory(ALL_LIST, history_id);
+    }
 }
 
 // loads existing data
 function loadList(array) {
-    array.forEach(function(item) {
+    f_date = "";
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (array[i][j].date == today_date) {
+                addToDo(array[i][j].name, array[i][j].id, array[i][j].done, array[i][j].trash);
+            }
+        }
+        f_date = array[i][0].date;
+
+        let newOption = new Option(`${f_date}`, i);
+        history.add(newOption, undefined);
+    }
+}
+
+// loads the history items to the view and creates option for select
+function loadListHistory(array, history_id) {
+    let found = false;
+
+    Array.from(history.options).forEach(function (item) {
+        if (item.value == current_list) {
+            found = true;
+        }
+    });
+
+    if (!found) {
+        let newOption = new Option(`${today_date}`, current_list);
+        history.add(newOption, undefined);
+    }
+
+    array[history_id].forEach(function (item) {
         addToDo(item.name, item.id, item.done, item.trash);
+        dateElement.innerHTML = item.date;
     });
 }
 
@@ -56,9 +120,9 @@ function addToDo(toDo, id, done, trash) {
 function completeToDo(element) {
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
 
-    LIST[element.id].done = LIST[element.id].done ? false : true;
+    ALL_LIST[current_list][element.id].done = ALL_LIST[current_list][element.id].done ? false : true;
 
-    if (LIST[element.id].done == false) {
+    if (ALL_LIST[current_list][element.id].done == false) {
         element.src = UNCHECK;
     } else {
         element.src = CHECK;
@@ -69,68 +133,83 @@ function completeToDo(element) {
 function removeToDo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
 
-    LIST[element.id].trash = true;
+    ALL_LIST[current_list][element.id].trash = true;
 }
 
 // press enter to add to list
-document.addEventListener("keydown", function(event) {
-    if (event.keyCode == 13) {
-        const toDo = input.value;
+document.addEventListener("keydown", function (event) {
+    if (viewing_history == false) {
+        if (event.keyCode == 13) {
+            const toDo = input.value;
 
-        if (toDo) {
-            addToDo(toDo, id, false, false);
+            if (toDo) {
+                addToDo(toDo, id, false, false);
 
-            LIST.push({
-                name : toDo,
-                id : id,
-                done : false,
-                trash : false
-            });
+                let current_date = [];
 
-            localStorage.setItem("TODO", JSON.stringify(LIST));
-            
-            id++;
-            input.value = "";
+                ALL_LIST[current_list].push({
+                    name: toDo,
+                    id: id,
+                    done: false,
+                    trash: false,
+                    date: today_date
+                });
+
+                localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
+                id++;
+
+                input.value = "";
+            }
         }
     }
 });
 
 // buttons for each to-do element
-list.addEventListener("click", function(event) {
-    const element = event.target;
-    const elementJob = element.attributes.job.value;
+list.addEventListener("click", function (event) {
+    if (viewing_history == false) {
+        const element = event.target;
+        const elementJob = element.attributes.job.value;
 
-    if (elementJob == "complete") {
-        completeToDo(element);
-    } else if (elementJob == "delete") {
-        removeToDo(element);
+        if (elementJob == "complete") {
+            completeToDo(element);
+        } else if (elementJob == "delete") {
+            removeToDo(element);
+        }
+
+        localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
     }
-
-    localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
 // add button new element to list on button click
-add.addEventListener("click", function(event) {
-    const toDo = input.value;
-    
-    if (toDo) {
-        addToDo(toDo, id, false, false);
+add.addEventListener("click", function (event) {
+    if (viewing_history == false) {
+        const toDo = input.value;
 
-        LIST.push({
-            name : toDo,
-            id : id,
-            done : false,
-            trash : false
-        });
+        if (toDo) {
+            addToDo(toDo, id, false, false);
 
-        localStorage.setItem("TODO", JSON.stringify(LIST));
-        id++;
-        input.value = "";
+            let current_date = [];
+
+            ALL_LIST[current_list].push({
+                name: toDo,
+                id: id,
+                done: false,
+                trash: false,
+                date: today_date
+            });
+
+
+            localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
+            id++;
+
+            input.value = "";
+        }
     }
+
 });
 
 // clear button
-clear.addEventListener("click", function() {
+clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
 })
