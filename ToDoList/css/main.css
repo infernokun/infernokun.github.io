@@ -173,3 +173,25 @@ body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
 }
+
+form {
+    padding-left: 100px;
+}
+
+form label {
+    left: 20%;
+    position: relative;
+    font-weight: bold;
+}
+
+form select {
+    margin-top: 5px;
+    left: 5%;
+    position: relative;
+}
+form button {
+    position: relative;
+    text-align: center;
+    left: 20%;
+    margin-top: 5px;
+}
