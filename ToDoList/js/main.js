@@ -34,6 +34,9 @@ if (data) {
 
     loadList(ALL_LIST);
 } else {
+    let newOption = new Option("Weekday, Month Day", "");
+    history.add(newOption, undefined);
+
     loadList(ALL_LIST);
 
     current_list = ALL_LIST.length;
