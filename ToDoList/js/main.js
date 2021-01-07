@@ -146,22 +146,26 @@ document.addEventListener("keydown", function (event) {
             const toDo = input.value;
 
             if (toDo) {
-                addToDo(toDo, id, false, false);
+                if (toDo.length >= 25) {
+                    alert("Must be below 25 characters!");
+                } else {
+                    addToDo(toDo, id, false, false);
 
-                let current_date = [];
+                    let current_date = [];
 
-                ALL_LIST[current_list].push({
-                    name: toDo,
-                    id: id,
-                    done: false,
-                    trash: false,
-                    date: today_date
-                });
+                    ALL_LIST[current_list].push({
+                        name: toDo,
+                        id: id,
+                        done: false,
+                        trash: false,
+                        date: today_date
+                    });
 
-                localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
-                id++;
+                    localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
+                    id++;
 
-                input.value = "";
+                    input.value = "";
+                }
             }
         }
     }
@@ -178,7 +182,6 @@ list.addEventListener("click", function (event) {
         } else if (elementJob == "delete") {
             removeToDo(element);
         }
-
         localStorage.setItem("TODO", JSON.stringify(ALL_LIST));
     }
 });
