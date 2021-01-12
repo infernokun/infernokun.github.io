@@ -30,22 +30,24 @@ let viewing_history = false;
 if (data) {
     ALL_LIST = JSON.parse(data);
 
+    current_list = ALL_LIST.length-1;
+
     id = ALL_LIST[current_list].length;
 
     loadList(ALL_LIST);
 } else {
-    let newOption = new Option("Weekday, Month Day", "");
-    history.add(newOption, undefined);
-
     loadList(ALL_LIST);
 
-    current_list = ALL_LIST.length;
+    current_list = ALL_LIST.length-1;
 
     if (ALL_LIST[current_list] == undefined) {
         let LIST = []
         ALL_LIST.push(LIST);
     }
 }
+
+let newOption = new Option(today_date, current_list);
+history.add(newOption, undefined);
 
 // upon form submit for history change
 function historyChange() {
@@ -74,8 +76,10 @@ function loadList(array) {
         }
         f_date = array[i][0].date;
 
-        let newOption = new Option(`${f_date}`, i);
-        history.add(newOption, undefined);
+        if (f_date != today_date) {
+            let newOption = new Option(`${f_date}`, i);
+            history.add(newOption, undefined);
+        }
     }
 }
 
@@ -89,10 +93,10 @@ function loadListHistory(array, history_id) {
         }
     });
 
-    if (!found) {
+    /*if (!found) {
         let newOption = new Option(`${today_date}`, current_list);
         history.add(newOption, undefined);
-    }
+    }*/
 
     array[history_id].forEach(function (item) {
         addToDo(item.name, item.id, item.done, item.trash);
