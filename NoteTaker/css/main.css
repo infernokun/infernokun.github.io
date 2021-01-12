@@ -144,7 +144,7 @@ button:hover {
     cursor: pointer;
 }
 
-/*.delete, .test{
+.delete, .test{
     padding: 10px;
     border-radius: 5px;
     margin: 0 auto;
@@ -160,4 +160,4 @@ button:hover {
 .delete:hover {
     background: rgb(238, 93, 93);
     cursor: pointer;
-}*/
+}
