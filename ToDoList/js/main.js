@@ -30,7 +30,7 @@ let viewing_history = false;
 if (data) {
     ALL_LIST = JSON.parse(data);
 
-    current_list = ALL_LIST.length-1;
+    current_list = ALL_LIST.length - 1;
 
     id = ALL_LIST[current_list].length;
 
@@ -38,7 +38,7 @@ if (data) {
 } else {
     loadList(ALL_LIST);
 
-    current_list = ALL_LIST.length-1;
+    current_list = ALL_LIST.length - 1;
 
     if (ALL_LIST[current_list] == undefined) {
         let LIST = []

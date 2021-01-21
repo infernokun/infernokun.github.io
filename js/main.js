@@ -1,1 +1,3 @@
-document.getElementById("year").innerText = new Date().getFullYear();
+$(document).ready(function () {
+    $("#year").text(new Date().getFullYear());
+});
