@@ -87,12 +87,11 @@ li {
   background-color: rgba(247, 57, 57, 0.8);
 }
 
+.hamburger,
+.close,
 .top-nav {
   position: absolute;
-}
-
-.hamburger {
-  position: absolute;
+  display: none;
 }
 
 /* MAIN CONTENT */
@@ -133,29 +132,6 @@ li {
   z-index: 1;
 }
 
-/* ABOUT */
-.section {
-  padding: 5rem 0 7rem 0;
-  overflow-x: hidden;
-  background-color: #222;
-}
-
-.about {
-  color: white;
-}
-
-.about .content p {
-  margin-top: 4rem;
-  margin-left: 25%;
-  width: 50%;
-  font-size: 2rem;
-}
-
-.about .content span {
-  color: rgba(247, 57, 57, 0.8);
-  font-weight: 900;
-}
-
 /* PROJECTS */
 .projects {
   color: black;
@@ -188,10 +164,35 @@ li {
   display: none;
 }
 
+/* ABOUT */
+.section {
+  padding: 5rem 0 7rem 0;
+  overflow-x: hidden;
+  background-color: #222;
+}
+
+.about {
+  color: white;
+}
+
+.about .content p {
+  margin-top: 4rem;
+  margin-left: 25%;
+  width: 50%;
+  font-size: 2rem;
+}
+
+.about .content span {
+  color: rgba(247, 57, 57, 0.8);
+  font-weight: 900;
+}
+
 /* SKILLS*/
 .skills .content {
   background-color: rgba(247, 57, 57, 0.8);
   border-radius: 50px 75px;
+  width: 60%;
+  margin-left: 20%;
 }
 
 .main-carousel,
@@ -201,11 +202,10 @@ li {
 
 .skill-set {
   text-align: center;
-  /*border: 2px solid red;*/
+  /*border: 1px solid white;*/
   z-index: 5;
   /*padding: 15rem;*/
-  height: 100%;
-  width: 50%;
+  width: 60%;
 }
 
 .skill-set i {
@@ -276,6 +276,10 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
+  .skill-set {
+    width: 90%;
+  }
+
   .projects .content {
     grid-template-columns: 1fr;
   }
@@ -290,6 +294,11 @@ li {
     background-color: white;
     transition: all 500ms ease-in-out;
     z-index: 5;
+  }
+
+  .close,
+  .top-nav {
+    display: inline-block;
   }
 
   .hamburger {
