@@ -1,3 +1,4 @@
+/* DEFAULT VALUES */
 *,
 *::before,
 *::after {
@@ -34,17 +35,15 @@ li {
   list-style: none;
 }
 
-.menu ul li {
-  padding: 5px;
-  float: right;
-}
-
-.nav-item:not(:last-child) {
-}
-
 .container {
   max-width: 200rem;
   margin: 0 auto;
+}
+
+/* HEADER */
+.menu ul li {
+  padding: 5px;
+  float: right;
 }
 
 .header {
@@ -54,7 +53,7 @@ li {
   height: 12rem;
 }
 
-.logo {
+.nav-logo {
   position: relative;
   width: 20rem;
   margin-left: 50px;
@@ -88,28 +87,7 @@ li {
   background-color: rgba(247, 57, 57, 0.8);
 }
 
-.section {
-  padding: 5rem 0 7rem 0;
-  overflow-x: hidden;
-  background-color: #222;
-}
-
-.about {
-  color: white;
-}
-
-.about .content p {
-  margin-top: 4rem;
-  margin-left: 25%;
-  width: 50%;
-  font-size: 2rem;
-}
-
-.about .content span {
-  color: rgba(247, 57, 57, 0.8);
-  font-weight: 900;
-}
-
+/* MAIN CONTENT */
 .title {
   margin: 1rem 0 2rem 0;
   text-align: center;
@@ -147,14 +125,65 @@ li {
   z-index: 1;
 }
 
+/* ABOUT */
+.section {
+  padding: 5rem 0 7rem 0;
+  overflow-x: hidden;
+  background-color: #222;
+}
+
+.about {
+  color: white;
+}
+
+.about .content p {
+  margin-top: 4rem;
+  margin-left: 25%;
+  width: 50%;
+  font-size: 2rem;
+}
+
+.about .content span {
+  color: rgba(247, 57, 57, 0.8);
+  font-weight: 900;
+}
+
+/* PROJECTS */
 .projects {
   color: black;
   background-image: url("/images/bg1.png");
   background-position: down 50%;
 }
 
+.projects .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project-description {
+  text-align: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom: 3rem;
+}
+
+.project-image {
+  width: 50%;
+  margin-left: 22%;
+}
+
+.project-title h1 {
+  font-size: 3rem;
+}
+
+.show-more {
+  display: none;
+}
+
+/* SKILLS*/
 .skills .content {
-  background: #8c8;
+  background-color: rgba(247, 57, 57, 0.8);
+  border-radius: 50px 75px;
 }
 
 .main-carousel,
@@ -164,7 +193,7 @@ li {
 
 .skill-set {
   text-align: center;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   z-index: 5;
   /*padding: 15rem;*/
   height: 100%;
@@ -203,21 +232,46 @@ li {
   margin: 0;
 }
 
-#prof-pic {
-  position: relative;
-  float: left;
-  width: 25%;
-}
-
 .youtube {
   background-image: url("/images/bg1.png");
   background-position: right 100%;
 }
 
+.youtube p {
+  margin-left: 46rem;
+  font-size: 3.5rem;
+  color: white;
+}
+
+#prof-pic {
+  position: relative;
+  float: left;
+  width: 25%;
+  margin-left: 100px;
+  border-radius: 50%;
+}
+
 .email {
 }
 
+@media only screen and (max-width: 406px) {
+  .nav-logo img {
+    width: 17rem;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 1274px) {
+  .projects .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .projects .content {
+    grid-template-columns: 1fr;
+  }
+
   .menu {
     position: fixed;
     top: 0;
@@ -230,9 +284,18 @@ li {
     z-index: 5;
   }
 
-  .logo {
+  .hamburger {
+    color: white;
+    font-size: 5rem;
+    margin-right: 7rem;
+    float: right;
+    cursor: pointer;
+  }
+
+  .nav-logo {
     z-index: 10;
     width: 20rem;
+    transform: translateX(-10%);
   }
 
   .menu.show {
@@ -244,7 +307,16 @@ li {
     align-items: center;
     justify-content: space-between;
     background-color: orange;
-    padding: 6rem 1.6rem;
+    padding: 3rem 1rem;
+  }
+
+  .top-nav .close {
+    color: white;
+    font-size: 5rem;
+    position: relative;
+    top: 40px;
+    float: right;
+    cursor: pointer;
   }
 
   .nav-link:link,
@@ -273,7 +345,31 @@ li {
     z-index: 1;
   }
 
+  .move {
+    transform: translateX(5%);
+  }
+
   .nav.show {
     background-color: rgba(0, 0, 0, 0.8);
+    /*background-color: rgb(255, 165, 0, 0.5);*/
+  }
+
+  .show-more {
+    display: grid;
+    background-color: rgb(247, 57, 57);
+    width: 15%;
+    border-radius: 2rem;
+    text-align: center;
+    margin-left: 42%;
+    cursor: pointer;
+    padding: 2rem;
+  }
+
+  .show-more:hover {
+    background-color: rgb(247, 57, 57, 0.5);
+  }
+
+  .show-more i {
+    font-size: 3rem;
   }
 }
