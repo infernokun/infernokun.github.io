@@ -87,6 +87,14 @@ li {
   background-color: rgba(247, 57, 57, 0.8);
 }
 
+.top-nav {
+  position: absolute;
+}
+
+.hamburger {
+  position: absolute;
+}
+
 /* MAIN CONTENT */
 .title {
   margin: 1rem 0 2rem 0;
@@ -285,6 +293,7 @@ li {
   }
 
   .hamburger {
+    position: relative;
     color: white;
     font-size: 5rem;
     margin-right: 7rem;
@@ -303,6 +312,7 @@ li {
   }
 
   .top-nav {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
