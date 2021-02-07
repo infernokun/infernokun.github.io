@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <title>Document</title>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 
@@ -30,20 +33,140 @@
                     <div class="top-nav">
                     </div>
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="HW1/">HW1</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">YouTube</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Email Me</a></li>
+                        <!--<li class="nav-item"><a class="nav-link" href="HW1/">HW1</a></li>
                         <li class="nav-item"><a class="nav-link" href="JSCalculator/">JS Calculator</a></li>
                         <li class="nav-item"><a class="nav-link" href="Project/">Project</a></li>
                         <li class="nav-item"><a class="nav-link" href="ToDoList/">To Do List</a></li>
                         <li class="nav-item"><a class="nav-link" href="Week 2/c05x_sorkin.html">Week 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="Week 3/c13x_forms.html">Week 3</a></li>
                         <li class="nav-item"><a class="nav-link" href="NoteTaker/">Note Taker</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Stopwatch/">Stopwatch</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Stopwatch/">Stopwatch</a></li>-->
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <main>
+        <section class="section about" id="about">
+            <div class="title">
+                <h1>About Me</h1>
+            </div>
+            <div class="content">
+                <h1>Javoris Brown</h1>
+                <h2>Computer Science</h2>
+                <p>Hello I'm Javoris. Currently I am a Undergraduate <span>Computer Science</span> Major @ Auburn
+                    University at Montgomery. I love an enjoy working with computer software and hardware. Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Impedit ex architecto voluptatum neque eligendi saepe
+                    consequatur provident corporis magni dolor sapiente, quasi ea alias vitae error reprehenderit
+                    inventore nihil?</p>
+
+                <p>Adipisci incidunt deserunt deleniti nulla quisquam accusantium necessitatibus quis perspiciatis
+                    magnam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, illo expedita, odit
+                    deleniti cumque repellendus a maxime qui reprehenderit molestias eos totam, asperiores minus sit.
+                    Est, ducimus cupiditate odio eos odit rem quaerat officiis velit corrupti distinctio vero facere
+                    expedita quibusdam iusto delectus. Animi quia corrupti hic, quisquam ea facere.</p>
+            </div>
+        </section>
+        <section class="section projects">
+            <div class="title">
+                <h1>Projects</h1>
+            </div>
+            <div class="content">
+            </div>
+        </section>
+
+        <section class="section skills">
+            <div class="title">
+                <h1>Skills</h1>
+            </div>
+            <div class="content">
+                <div class="main-carousel" data-flickity='{ 
+                    "cellAlign": "left",
+                    "autoPlay": 2000,
+                    "wrapAround": true,
+                    "draggable": true}'>
+                    <div class="skill-set">
+                        <i class="fa fa-microchip"></i><br>
+                        <div class="skill-title">Computer Hardware</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-desktop"></i><br>
+                        <div class="skill-title">Computer Software</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-terminal"></i><br>
+                        <div class="skill-title">Computer Security</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-code"></i><br>
+                        <div class="skill-title">Computer Programming</div>
+                        <ul>
+                            <li>Java</li>
+                            <li>PHP</li>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>Python</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>MYSQL</li>
+                            <li>Data Structures</li>
+                            <li>Algorithms</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-cloud"></i><br>
+                        <div class="skill-title">Cloud Computing</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-link"></i><br>
+                        <div class="skill-title">Web Development</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+
+                    <div class="skill-set">
+                        <i class="fa fa-mobile"></i><br>
+                        <div class="skill-title">Mobile Computing</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus architecto libero omnis dolores officiis sed, veniam obcaecati eum dolorem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section youtube">
+            <div class="title">
+                <h1>YouTube</h1>
+            </div>
+            <div class="content">
+                <img id="prof-pic" src="./images/prof.jpg" alt="">
+                <h1>InfernoKun YouTube Channel</h1>
+                <p><span>22,000+</span> Subscriptions</p>
+                <p><span>7.4 Million</span> Views</p>
+            </div>
+        </section>
+
+        <section class="section email">
+            <div class="title">
+                <h1>Email Me</h1><br>
+                <a href="mailto:infernokun@outlook.com">infernokun@outlook.com</a>
+            </div>
+            <div class="content">
+            </div>
+        </section>
+    </main>
 </body>
 <footer>&copy; <span id="year"></span> Javoris Brown</footer>
 
