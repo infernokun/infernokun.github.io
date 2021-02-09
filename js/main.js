@@ -77,7 +77,6 @@ navClose.addEventListener("click", () => {
 });
 
 document.body.addEventListener("click", function (event) {
-
     var element = event.target;
     if (element.classList.contains("show")) {
         menu.classList.remove("show");

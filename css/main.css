@@ -197,7 +197,7 @@ li {
 
 .main-carousel,
 .flickity-viewport .flickity-slider {
-  height: 50rem;
+  height: 40rem;
 }
 
 .skill-set {
@@ -210,7 +210,7 @@ li {
 
 .skill-set i {
   font-size: 5rem;
-  padding-top: 10rem;
+  padding-top: 5rem;
 }
 
 .skill-set div {
@@ -242,31 +242,62 @@ li {
 
 .youtube {
   background-image: url("/images/bg1.png");
-  background-position: right 100%;
+  background-position: right 50%;
+}
+
+.youtube .content h1 {
+  text-align: left;
 }
 
 .youtube p {
-  margin-left: 46rem;
   font-size: 3.5rem;
   color: white;
+}
+.youtube .content h1,
+.youtube .content p {
+  padding-left: 30%;
+}
+
+.youtube a:hover {
+  text-decoration: underline;
 }
 
 #prof-pic {
   position: relative;
+  margin: 0;
   float: left;
-  width: 25%;
-  margin-left: 100px;
+  width: 20%;
+  margin-left: 5%;
   border-radius: 50%;
 }
 
-.email {
+.email .content {
+  text-align: center;
 }
 
-@media only screen and (max-width: 406px) {
-  .nav-logo img {
-    width: 17rem;
-    margin-top: 5px;
-  }
+.email p {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.email a {
+  font-size: 2rem;
+}
+
+footer {
+  background-color: rgb(56, 56, 56);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.bottom-icon {
+  font-size: 5rem;
+  margin: 2.5rem;
+  color: #000;
+}
+.bottom-icon:hover {
+  color: rgb(247, 57, 57);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1274px) {
@@ -276,8 +307,38 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
+  .youtube .content {
+    display: grid;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+  }
+
+  .youtube .content h1,
+  .youtube .content p {
+    position: relative;
+    font-size: 2rem;
+    white-space: nowrap;
+    padding: 0;
+    text-align: center;
+  }
+
+  .youtube .content p {
+  }
+
+  #prof-pic {
+    width: 35%;
+    margin-left: 32%;
+  }
+
   .skill-set {
     width: 90%;
+  }
+
+  .about .content p {
+    margin-left: 10%;
+    width: 80%;
+    font-size: 2rem;
   }
 
   .projects .content {
@@ -390,5 +451,21 @@ li {
 
   .show-more i {
     font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .nav-logo img {
+    width: 17rem;
+    margin-top: 5px;
+  }
+
+  .skill-set {
+    width: 10rem;
+  }
+
+  .skills .content {
+    width: 35rem;
+    margin-left: 1.5em;
   }
 }
