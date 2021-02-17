@@ -146,18 +146,51 @@ li {
 
 .project-description {
   text-align: center;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   margin-bottom: 3rem;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 .project-image {
-  width: 50%;
-  margin-left: 22%;
+  /*width: 50%;*/
+  width: 60%;
+  margin-left: 20%;
+  object-fit: cover;
 }
 
 .project-title h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
+}
+
+.project-image.imdb {
+  height: 170px;
+  object-position: 10% 20%;
+}
+
+.project-image.login {
+  height: 170px;
+  object-position: 30% 10%;
+}
+
+.project-image.tab {
+  height: 170px;
+  object-position: 0% 10%;
+}
+
+.project-button {
+  display: inline-block;
+  padding: 5px;
+  color: #000;
+  background: rgb(247, 57, 57);
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.project-button:hover {
+  background: rgb(255, 97, 97);
 }
 
 .show-more {
@@ -206,6 +239,7 @@ li {
   z-index: 5;
   /*padding: 15rem;*/
   width: 60%;
+  height: 100%;
 }
 
 .skill-set i {
@@ -260,6 +294,7 @@ li {
 
 .youtube a:hover {
   text-decoration: underline;
+  color: rgb(255, 97, 97);
 }
 
 #prof-pic {
@@ -282,6 +317,10 @@ li {
 
 .email a {
   font-size: 2rem;
+}
+.email a:hover {
+  text-decoration: underline;
+  color: rgb(255, 97, 97);
 }
 
 footer {
@@ -442,7 +481,6 @@ footer {
     text-align: center;
     margin-left: 42%;
     cursor: pointer;
-    padding: 2rem;
   }
 
   .show-more:hover {
