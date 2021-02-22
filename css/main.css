@@ -98,6 +98,7 @@ li {
 .title {
   margin: 1rem 0 2rem 0;
   text-align: center;
+  color: white;
 }
 
 .title h1 {
@@ -146,16 +147,13 @@ li {
 
 .project-description {
   text-align: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-bottom: 3rem;
+  margin: 0rem 3rem 3rem 3rem;
   padding: 15px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 
 .project-image {
-  /*width: 50%;*/
   width: 60%;
   margin-left: 20%;
   object-fit: cover;
@@ -235,9 +233,7 @@ li {
 
 .skill-set {
   text-align: center;
-  /*border: 1px solid white;*/
   z-index: 5;
-  /*padding: 15rem;*/
   width: 60%;
   height: 100%;
 }
@@ -263,17 +259,18 @@ li {
 
 .skill-set p {
   text-align: center;
-  padding: 0rem 4rem 0rem 4rem;
+  padding-top: 4rem;
+  padding-left: 4rem;
 }
 
 .skill-set i,
 .skill-set div {
   position: relative;
-  /*bottom: 10rem;*/
   word-break: normal;
   margin: 0;
 }
 
+/* YOUTUBE */
 .youtube {
   background-image: url("/images/bg1.png");
   background-position: right 50%;
@@ -305,7 +302,7 @@ li {
   margin-left: 5%;
   border-radius: 50%;
 }
-
+/* CONNECT */
 .email .content {
   text-align: center;
 }
@@ -318,15 +315,10 @@ li {
 .email a {
   font-size: 2rem;
 }
+
 .email a:hover {
   text-decoration: underline;
   color: rgb(255, 97, 97);
-}
-
-footer {
-  background-color: rgb(56, 56, 56);
-  text-align: center;
-  font-size: 2rem;
 }
 
 .bottom-icon {
@@ -334,9 +326,17 @@ footer {
   margin: 2.5rem;
   color: #000;
 }
+
 .bottom-icon:hover {
   color: rgb(247, 57, 57);
   cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgb(56, 56, 56);
+  text-align: center;
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 1274px) {
@@ -346,6 +346,7 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+  /* YOUTUBE */
   .youtube .content {
     display: grid;
     text-align: center;
@@ -362,13 +363,12 @@ footer {
     text-align: center;
   }
 
-  .youtube .content p {
-  }
-
   #prof-pic {
     width: 35%;
     margin-left: 32%;
   }
+
+  /* SKILLS */
 
   .skill-set {
     width: 90%;
@@ -380,10 +380,12 @@ footer {
     font-size: 2rem;
   }
 
+  /* PROJECTS */
   .projects .content {
     grid-template-columns: 1fr;
   }
 
+  /* MOBILE MENU */
   .menu {
     position: fixed;
     top: 0;
@@ -470,7 +472,6 @@ footer {
 
   .nav.show {
     background-color: rgba(0, 0, 0, 0.8);
-    /*background-color: rgb(255, 165, 0, 0.5);*/
   }
 
   .show-more {
