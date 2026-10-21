@@ -1,0 +1,31 @@
+{{ define "main" }}
+    {{- $paginator := partial "helper/paginator.html" . -}}
+
+    {{ if eq $paginator.PageNumber 1 }}
+        <section class="hero">
+            <p class="hero-eyebrow">Projects / Mods / Homelab</p>
+            <h2 class="hero-title">I build the tools<br><span>I want to use.</span></h2>
+            <p class="hero-text">
+                Self-hosted web apps, game mods and small utilities. Each post here is a write-up of one of them:
+                why it exists, how it works, and what broke on the way.
+            </p>
+            <div class="hero-actions">
+                <a class="hero-button primary" href="{{ "projects/" | relLangURL }}">All projects</a>
+                <a class="hero-button" href="https://github.com/infernokun" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </section>
+    {{ end }}
+
+    <section class="article-list">
+        {{ range $index, $element := $paginator.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+    {{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

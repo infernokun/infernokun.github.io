@@ -1,0 +1,9 @@
+baseURL = "https://infernokun.github.io/"
+locale = "en-US"
+title = "InfernoKun"
+defaultContentLanguage = "en"
+hasCJKLanguage = false
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 6
