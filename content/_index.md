@@ -1,8 +1,4 @@
 ---
-menu:
-    main:
-        name: Home
-        weight: -100
-        params:
-            icon: home
+title: InfernoKun
+description: Self-hosted apps, game mods and the tools in between, by Javoris.
 ---

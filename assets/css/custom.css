@@ -1,0 +1,147 @@
+/* InfernoKun on top of Blowfish: Barlow type, red on black. */
+
+html, body {
+  font-family: "Barlow", ui-sans-serif, system-ui, sans-serif;
+}
+
+code, kbd, pre, samp {
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+/* Headings in condensed caps, like the logo. */
+h1, h2, h3,
+.prose h1, .prose h2, .prose h3 {
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.prose h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid rgb(var(--color-primary-600));
+}
+
+/* A faint red glow in the top corner of the page. */
+body {
+  background-image: radial-gradient(1100px 520px at 100% -10%, rgba(227, 38, 45, 0.13), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Cards: flat black with a thin border that turns red on hover. */
+article.border,
+.article-link--card,
+a > div.border {
+  border-color: rgb(var(--color-neutral-700)) !important;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover article.border,
+a:hover > div.border,
+.article-link--card:hover {
+  border-color: rgb(var(--color-primary-600)) !important;
+}
+
+/* Images and videos in posts. */
+.prose img,
+.prose video {
+  border: 1px solid rgb(var(--color-neutral-700));
+  border-radius: 6px;
+}
+
+.prose video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+}
+
+.prose pre {
+  border-left: 3px solid rgb(var(--color-primary-600));
+}
+
+/* Homepage intro. */
+.ik-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0 2.5rem;
+  padding: 2.75rem 2.25rem 2.25rem;
+  background: linear-gradient(135deg, #1a090b 0%, rgb(var(--color-neutral-800)) 60%);
+  border: 1px solid rgb(var(--color-neutral-700));
+  border-left: 4px solid rgb(var(--color-primary-600));
+}
+
+.ik-hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(227, 38, 45, 0.35), transparent 70%);
+  pointer-events: none;
+}
+
+.ik-eyebrow {
+  margin: 0 0 0.75rem;
+  color: rgb(var(--color-primary-500));
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.ik-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+.ik-title span {
+  color: rgb(var(--color-primary-600));
+}
+
+.ik-text {
+  max-width: 40rem;
+  margin: 1rem 0 1.5rem;
+  color: rgb(var(--color-neutral-300));
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.ik-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ik-button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgb(var(--color-primary-600));
+  color: #fff !important;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: background 0.2s ease;
+}
+
+.ik-primary {
+  background: rgb(var(--color-primary-600));
+}
+
+.ik-button:hover {
+  background: rgb(var(--color-primary-800));
+}
+
+/* Card thumbnails: show the top of each screenshot, where the app's header is. */
+.thumbnail_card img {
+  object-position: 50% 0%;
+}

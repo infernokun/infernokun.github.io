@@ -1,0 +1,16 @@
+{{/* Homepage: an intro block, then Blowfish's card grid of recent projects. */}}
+<section class="ik-hero">
+  <p class="ik-eyebrow">Projects / Mods / Homelab</p>
+  <h1 class="ik-title">I build the tools<br><span>I want to use.</span></h1>
+  <p class="ik-text">
+    Self-hosted web apps, game mods and small utilities. Each project here has a write-up:
+    why it exists, how it works, and what broke on the way.
+  </p>
+  <div class="ik-actions">
+    <a class="ik-button ik-primary" href="{{ "projects/" | relLangURL }}">All projects</a>
+    <a class="ik-button" href="https://github.com/infernokun" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+<section>
+  {{ partial "recent-articles/main.html" . }}
+</section>

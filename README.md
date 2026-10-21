@@ -2,7 +2,7 @@
 
 Source for [infernokun.github.io](https://infernokun.github.io/): write-ups of my projects, mods and homelab experiments.
 
-Built with [Hugo](https://gohugo.io/) and the [Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme, pulled in as a Hugo module.
+Built with [Hugo](https://gohugo.io/) and the [Blowfish](https://blowfish.page/) theme, pulled in as a Hugo module, with a custom red and black color scheme (`assets/css/schemes/inferno.css`), styles (`assets/css/custom.css`) and homepage (`layouts/partials/home/custom.html`).
 
 ## Run it locally
 
@@ -16,7 +16,7 @@ Then open http://localhost:1313/.
 
 ## Write a post
 
-Each post is a folder under `content/post/` with an `index.md` and its images next to it. The `image` field in the front matter is the cover.
+Each project is a folder under `content/projects/` with an `index.md` and its images next to it. The `featureimage` field in the front matter is the card and header image.
 
 ## Publishing
 

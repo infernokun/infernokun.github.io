@@ -1,2 +1,0 @@
-post = "/projects/:slug/"
-page = "/:slug/"
