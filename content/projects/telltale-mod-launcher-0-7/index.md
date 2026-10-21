@@ -65,7 +65,7 @@ Now the list is the load order. Drag a mod up or down, or use Move up and Move d
 
 ![A line shows where the mod will land](drag-line.png)
 
-The screenshot at the top is my real install: Season 2 Rewind dragged above Graphic Black Disabler. I swapped them back and forth through the launcher, and ttarchext read the new priorities straight out of the encrypted files each time.
+Swapping Season 2 Rewind and Graphic Black Disabler back and forth through the launcher, ttarchext read the new priorities straight out of the encrypted files each time.
 
 ## Getting it
 

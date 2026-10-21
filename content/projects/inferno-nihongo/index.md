@@ -17,7 +17,7 @@ tags:
 
 Inferno Nihongo turns real Japanese, like manga, light novels and screenshots, into study material. Point it at a page, read it with help, and the words you looked up come back for review. No generic decks: you review the words you actually met.
 
-Inferno Nihongo (インフェルノの日本語) is live at [japan.infernokun.com](https://japan.infernokun.com/). It's free while it's in an evaluation period, and you sign in with Google. The source is private.
+Inferno Nihongo (インフェルノの日本語) is live at [japan.infernokun.com](https://japan.infernokun.com/). It's free to try while it's in evaluation.
 
 ![The landing page](live-landing.png)
 

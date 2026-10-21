@@ -12,7 +12,7 @@ logo = "img/logo.png"
 description = "Self-hosted apps, game mods and the tools in between, by Javoris."
 
 [params.author]
-name = "Javoris"
+name = "InfernoKun"
 image = "img/avatar.jpg"
 headline = "Self-hosted apps, game mods and the tools in between."
 links = [

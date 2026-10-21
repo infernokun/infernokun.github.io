@@ -15,8 +15,6 @@ tags:
 
 Inferno Games keeps track of the games I own, what I'm playing now, and my backlog. It pulls in my whole Steam library and splits playtime between my Windows PC and my Steam Deck.
 
-It runs on my home server alongside [Inferno Comics](/projects/inferno-comics/). The source is private, and these screenshots are from my own instance.
-
 ![The dashboard](games-dashboard.webp)
 
 ## The library
@@ -38,5 +36,3 @@ The Steam Library page lists every game on my Steam account, enriched with data 
 Steam Stats is the big picture: 394 games, about 11,000 hours in total, and how much of the library I've actually played. The platform breakdown shows my top games on PC and on the Deck, and a filter can drop the outliers with thousands of hours so they don't swamp everything else.
 
 ![Steam stats](games-steam-stats.webp)
-
-The Steam Deck numbers are a nice pair with [SyncDeck](/projects/syncdeck/), which keeps those games' saves synced to the same PC.

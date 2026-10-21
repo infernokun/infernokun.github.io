@@ -17,7 +17,7 @@ In the original release of The Walking Dead Season Two you could open an episode
 
 The Telltale Definitive Series bundles all four seasons plus Michonne into one game. Seasons 1, 3, 4 and Michonne still have a rewind menu. Season 2 doesn't. Open an episode and all you get is Restart Episode.
 
-I own both the original Season Two and the Definitive Series on Steam, so I went looking for the difference.
+So I went looking for the difference between the two releases.
 
 [Source and release on GitHub](https://github.com/infernokun/TWD-Definitive-Season2-Rewind)
 

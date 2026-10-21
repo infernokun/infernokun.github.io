@@ -48,5 +48,3 @@ That mode needs the PC's Syncthing API key, and typing a 32-character key on the
 Decky plugins have a Python backend and a React front end in TypeScript. The backend does all the file system and Syncthing work. The front end is the panel in the screenshot.
 
 The first public release was 1.0.0 on September 16. Most of what followed came from actually using it: SD card awareness, relocating a folder when a game's saves move, forgetting games that are gone, and the PC auto-add mode. It's at 1.4.2 now, with CI and a release workflow on GitHub.
-
-The screenshot is from my own Deck. The Walking Dead Definitive Series is one of the two games syncing, which is how my saves were already on my PC when I started on the [Season 2 Rewind mod](/projects/twd-season-2-rewind/).

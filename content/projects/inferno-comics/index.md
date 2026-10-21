@@ -16,8 +16,6 @@ tags:
 
 Inferno Comics tracks my comic collection: what I own, what I'm missing, and what's coming out. Most of it is DC, with some Marvel and manga. The point of it is that adding comics is mostly taking photos instead of typing in every issue.
 
-It runs on my home server. The source is private, and these screenshots are from my own instance.
-
 ![The dashboard](live-dashboard.png)
 
 ## Adding a series
