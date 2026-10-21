@@ -4,6 +4,7 @@ description: Scan a page of manga or a novel, tap any word for its reading, mean
 slug: inferno-nihongo
 date: 2026-06-09
 featureimage: og-image.png
+showTableOfContents: false
 categories:
     - Web Apps
 tags:
@@ -17,17 +18,21 @@ tags:
 
 Inferno Nihongo turns real Japanese, like manga, light novels and screenshots, into study material. Point it at a page, read it with help, and the words you looked up come back for review. No generic decks: you review the words you actually met.
 
-Inferno Nihongo (インフェルノの日本語) is live at [japan.infernokun.com](https://japan.infernokun.com/). It's free to try while it's in evaluation.
+It's live at [japan.infernokun.com](https://japan.infernokun.com/), free to try while it's in evaluation.
 
 ![The landing page](live-landing.png)
 
 ## Scan
 
-Photograph a page, or upload a screenshot, a PDF or a CBZ. OCR finds the text, including vertical text, rotated pages and speech bubbles, and rebuilds it as real text with the reading order fixed.
+{{< feature img="07b-bubble-grouping.webp" alt="Reviewing a scan: green words are included" side="left" >}}
+### Photograph any page
 
-Real scans are messy, so before anything is saved you see exactly what it found. Every word is boxed on the image. You can drop false positives, fix a reading, and tune how eagerly nearby boxes merge into one speech bubble. Furigana is left out by default, because those little reading aids get swept into the text and ruin it.
+Upload a photo, a screenshot, a PDF or a CBZ. OCR finds the text, including vertical text, rotated pages and speech bubbles, and rebuilds it as real text with the reading order fixed.
 
-![Reviewing a scan: green words are included](07b-bubble-grouping.webp)
+### See what it found
+
+Real scans are messy, so before anything is saved every word is boxed on the image. Drop false positives, fix a reading, and tune how eagerly nearby boxes merge into one speech bubble. Furigana is left out by default, because those little reading aids get swept into the text and ruin it.
+{{< /feature >}}
 
 ## Read
 
@@ -35,37 +40,44 @@ Once a page is in your library, every speech bubble it found gets a marker.
 
 ![Every detected bubble gets a 文 marker](nihongo-manga-spread.webp)
 
-Tap a marker and the bubble opens as real text, with furigana over the kanji.
+{{< grid cols="2" >}}
+nihongo-bubble-popup.webp | Tap a marker and the bubble opens as real text, with furigana over the kanji
+nihongo-page-popups.webp | Open as many as you like and read the page that way
+{{< /grid >}}
 
-![One bubble opened as text](nihongo-bubble-popup.webp)
+{{< feature img="nihongo-word-card.webp" alt="The word card" side="right" >}}
+### Tap any word
 
-You can open as many as you like and read the page that way.
+A tap shows the reading, meanings, the conjugation broken down (dictionary form plus passive plus past, and so on), JLPT level, frequency rank, WaniKani progress, the kanji with their readings and parts, example sentences, and where else in your library the word shows up.
 
-![A page with several bubbles open](nihongo-page-popups.webp)
+Words you've saved are underlined green. Words saved from a different series show orange, so your vocabulary follows you from book to book.
+{{< /feature >}}
 
-Every word in that text is tappable. A tap shows the reading, meanings, the conjugation broken down (dictionary form plus passive plus past, and so on), JLPT level, frequency rank, WaniKani progress, the kanji with their readings and parts, example sentences, and where else in your library the word shows up.
+{{< feature img="nihongo-novel-reader.webp" alt="Reading a novel page by page" side="left" >}}
+### Novels too
 
-![The word card](nihongo-word-card.webp)
+Text-heavy pages get a page reader instead, with furigana above only the kanji you don't know yet.
 
-Words you've saved are underlined green. Words you saved from a different series show orange, so you can see your vocabulary following you from book to book.
-
-Novels and other text-heavy pages get a page reader instead, with furigana above only the kanji you don't know yet. The pages down the side are photos of the physical book.
-
-![Reading a novel page by page](nihongo-novel-reader.webp)
+The pages down the side are photos of the physical book, each one turned into text you can tap.
+{{< /feature >}}
 
 ## Remember
 
-Saved words go into spaced-repetition review. If you already know a word you can mark it known right from the reader. A built-in getting-started book walks through all of this, including how a scan is reviewed.
+{{< feature img="gs-p5-review.webp" alt="A page from the getting-started book" side="right" >}}
+### Review what you met
 
-![A page from the getting-started book](gs-p5-review.webp)
+Saved words go into spaced-repetition review. If you already know a word you can mark it known right from the reader.
+
+A built-in getting-started book walks through all of this, including how a scan is reviewed.
+{{< /feature >}}
 
 ## How it's built
 
 It's four services, all in Docker:
 
 - **Web:** Angular 22 with TypeScript and SCSS.
-- **API:** Spring Boot 3.5 on Java 25, with PostgreSQL and Redis. The Japanese analysis lives in its own Gradle module called `hibana` (火花, "spark"): the tokenizer, bundled JMdict, JMnedict, KANJIDIC2 and Tanaka example data, and the dictionary ranking. It has no database, HTTP or auth in it, so it can be tested on its own.
+- **API:** Spring Boot 3.5 on Java 25, with PostgreSQL and Redis. The Japanese analysis lives in its own Gradle module, `hibana` (火花, "spark"): the tokenizer, bundled JMdict, JMnedict, KANJIDIC2 and Tanaka data, and the dictionary ranking, with no database, HTTP or auth in it.
 - **Translate:** a Python FastAPI service for OCR, furigana, translation, and rendering pages out of PDFs and CBZs.
-- **Mobile:** a Flutter app for Android and iOS that talks to the same API as the web app, with an offline mode.
+- **Mobile:** a Flutter app for Android and iOS on the same API, with an offline mode.
 
 My own GitLab builds and tests everything and pushes the images to my own registry. Next to test coverage for each service, the pipeline reports a reader accuracy score and an answer accuracy score, so a change that makes either one worse shows up before it ships.

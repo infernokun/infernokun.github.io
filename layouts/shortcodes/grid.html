@@ -1,0 +1,29 @@
+{{- /*
+  Screenshots in a row. One image per line, "file | caption":
+
+  {{< grid cols="2" >}}
+  first.webp | What the first one shows
+  second.webp | What the second one shows
+  {{< /grid >}}
+
+  Collapses to one column on phones.
+*/ -}}
+{{- $cols := .Get "cols" | default "2" -}}
+<div class="ik-grid" style="--ik-cols: {{ $cols }}">
+{{- range split (trim .Inner "\n ") "\n" }}
+  {{- $line := trim . " \t\r" -}}
+  {{- if $line }}
+    {{- $parts := split $line "|" -}}
+    {{- $src := trim (index $parts 0) " " -}}
+    {{- $caption := "" }}{{ if gt (len $parts) 1 }}{{ $caption = trim (index $parts 1) " " }}{{ end -}}
+    {{- $img := $.Page.Resources.Get $src -}}
+    {{- if not $img }}{{ errorf "grid: %q is not in the page bundle of %s" $src $.Page.File.Path }}{{ end -}}
+    {{- $shown := $img -}}
+    {{- if gt $img.Width 1000 }}{{ $shown = $img.Resize "1000x webp q85" }}{{ end }}
+  <figure>
+    <img src="{{ $shown.RelPermalink }}" width="{{ $shown.Width }}" height="{{ $shown.Height }}" alt="{{ $caption }}" loading="lazy" decoding="async">
+    {{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{- end }}
+{{- end }}
+</div>

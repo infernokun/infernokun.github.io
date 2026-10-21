@@ -22,6 +22,7 @@ SyncDeck does that from the Quick Access Menu.
 
 ## What it does
 
+{{< feature img="panel.png" alt="The SyncDeck panel in the Quick Access Menu" side="right" >}}
 - Lists the installed Steam games, across every library including SD cards, by reading Steam's `appmanifest` files.
 - Finds where each game keeps its saves and shows the best match. It looks in the Proton prefix (`Saved Games`, `Documents/My Games`, publisher folders under `AppData`), the Linux XDG folders, and `save/` folders inside the install. You confirm before anything is created.
 - Creates the Syncthing folder, shares it with the devices you pick, and turns on versioning so a bad sync can be undone.
@@ -30,6 +31,7 @@ SyncDeck does that from the Quick Access Menu.
 - Can install a user systemd unit so Syncthing starts at login, even in Gaming Mode.
 
 Games that already have Steam Cloud are hidden by default, since Steam handles those.
+{{< /feature >}}
 
 ## The PC side
 
@@ -37,9 +39,20 @@ By default, adding a game makes the PC's Syncthing show a "the Deck wants to sha
 
 There's also an optional mode where SyncDeck creates the folder on the PC itself through Syncthing's REST API, in the right place:
 
-- Saves from the Proton prefix go to the same place in your Windows profile, like `~\Documents\My Games\...`. If the game is installed on the PC too, the two merge.
-- Saves inside the install folder go to the game's real install folder on the PC. SyncDeck finds it by checking the PC's usual Steam library locations.
-- Anything with no Windows equivalent goes under `~\SyncDeck\<Game>` as a backup.
+<div class="ik-cards">
+  <div class="ik-card">
+    <h3>Proton prefix saves</h3>
+    <p>Go to the same place in your Windows profile, like <code>~\Documents\My Games\...</code>. If the game is installed on the PC too, the two merge.</p>
+  </div>
+  <div class="ik-card">
+    <h3>Saves in the install folder</h3>
+    <p>Go to the game's real install folder on the PC. SyncDeck finds it by checking the PC's usual Steam library locations.</p>
+  </div>
+  <div class="ik-card">
+    <h3>Everything else</h3>
+    <p>Anything with no Windows equivalent goes under <code>~\SyncDeck\&lt;Game&gt;</code> as a backup.</p>
+  </div>
+</div>
 
 That mode needs the PC's Syncthing API key, and typing a 32-character key on the Deck's on-screen keyboard is miserable. So you can drop the key into a text file in any folder the Deck already syncs. It arrives on the Deck by itself, and one button reads it in and deletes the file.
 

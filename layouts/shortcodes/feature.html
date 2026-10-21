@@ -1,0 +1,27 @@
+{{- /*
+  A screenshot beside its text. Usage:
+
+  {{< feature img="shot.webp" alt="Caption" side="right" >}}
+  ### Heading
+  Markdown text...
+  {{< /feature >}}
+
+  side="left" (default) puts the image on the left. On narrow screens the image
+  always comes first and the text sits under it.
+*/ -}}
+{{- $src := .Get "img" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $side := .Get "side" | default "left" -}}
+{{- $img := .Page.Resources.Get $src -}}
+{{- if not $img }}{{ errorf "feature: %q is not in the page bundle of %s" $src .Page.File.Path }}{{ end -}}
+{{- $shown := $img -}}
+{{- if gt $img.Width 1200 }}{{ $shown = $img.Resize "1200x webp q85" }}{{ end -}}
+<div class="ik-feature ik-feature--{{ $side }}">
+  <figure class="ik-feature-media">
+    <img src="{{ $shown.RelPermalink }}" width="{{ $shown.Width }}" height="{{ $shown.Height }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+    {{- with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  <div class="ik-feature-text">
+    {{ .InnerDeindent | .Page.RenderString (dict "display" "block") }}
+  </div>
+</div>

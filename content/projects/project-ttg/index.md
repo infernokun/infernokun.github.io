@@ -4,6 +4,7 @@ description: A work-in-progress game in Unreal Engine built around Clementine fr
 slug: project-ttg
 date: 2023-11-14
 featureimage: clementine-poster.jpg
+showTableOfContents: false
 categories:
     - Game Dev
 tags:
@@ -22,30 +23,36 @@ It's purely for learning, with no plans for any kind of release. Everything here
 
 ![Clementine in the test level](telltale-style.png)
 
-## Third-person gameplay
+## Gameplay
+
+{{< feature img="game5.png" alt="Aiming with the flashlight" side="left" >}}
+### Third-person
 
 From the Resident Evil remakes it takes the camera over the shoulder, a flashlight that matters, and careful movement. In a full game that style also means limited resources and puzzles built into the environment.
+{{< /feature >}}
 
-![Aiming with the flashlight](game5.png)
-
-## Blueprints
+{{< feature img="game2.png" alt="Gameplay Blueprint" side="right" >}}
+### Blueprints
 
 The gameplay logic is built in Blueprints, Unreal's visual scripting. Events, functions and interactions with the world are all wired up there, which makes it quick to try an idea without writing C++ first.
+{{< /feature >}}
 
-![Gameplay Blueprint](game2.png)
+## Animation
 
-## Control Rig
+{{< feature img="game3.png" alt="Control Rig" side="left" >}}
+### Control Rig
 
 The character animation goes through Control Rig, Unreal's node-based tool for building skeletal controls and animating them procedurally. It lets the character react to the world instead of only playing back canned animations.
+{{< /feature >}}
 
-![Control Rig](game3.png)
+{{< feature img="game4.png" alt="Control Rig Blueprint" side="right" >}}
+### Control Rig Blueprints
 
 Control Rig setups can be packaged as Control Rig Blueprints, so the same setup can be reused and configured across characters.
+{{< /feature >}}
 
-![Control Rig Blueprint](game4.png)
-
-## The Clementine model
+{{< feature img="game6.png" alt="Clementine in the engine" side="left" >}}
+### The Clementine model
 
 Getting Clementine into Unreal meant setting up the model, rigging it, and getting it animating. With Control Rig driving her, I could clone existing animations and adjust them instead of animating everything from scratch.
-
-![Clementine in the engine](game6.png)
+{{< /feature >}}

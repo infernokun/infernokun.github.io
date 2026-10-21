@@ -4,6 +4,7 @@ description: The Definitive Series quietly turned off rewind in The Walking Dead
 slug: twd-season-2-rewind
 date: 2026-10-19
 featureimage: cover.png
+imagePosition: "50% 50%"
 categories:
     - Game Modding
 tags:
@@ -120,8 +121,10 @@ Rewinding deletes the saves after the chapter you pick, same as the original gam
 
 The build script doesn't ship any of Telltale's files. It pulls the stock script out of your own install, patches it, packs it, then extracts and decrypts the result again to check both round trips.
 
-The mod also works with the [Telltale Mod Launcher](/projects/telltale-mod-launcher-0-7/), which is how it's installed here:
+{{< feature img="launcher.png" alt="Season 2 Rewind installed through the launcher" side="left" >}}
+### With the mod launcher
 
-![Season 2 Rewind installed through the launcher](launcher.png)
+The mod also works with the [Telltale Mod Launcher](/projects/telltale-mod-launcher-0-7/), which is how it's installed here.
 
 Version 1.0.1 only renamed its info file to `modinfo_season2_rewind.json` so it's obvious in the Archives folder which mod it belongs to.
+{{< /feature >}}

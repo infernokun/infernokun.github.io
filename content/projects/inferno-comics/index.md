@@ -4,6 +4,7 @@ description: My comic collection, tracked in a self-hosted app. Photograph a sta
 slug: inferno-comics
 date: 2025-06-24
 featureimage: live-series.png
+showTableOfContents: false
 categories:
     - Web Apps
 tags:
@@ -18,33 +19,37 @@ Inferno Comics tracks my comic collection: what I own, what I'm missing, and wha
 
 ![The dashboard](live-dashboard.png)
 
-## Adding a series
+## Adding comics
+
+{{< feature img="comic-vine-search.png" alt="Searching Comic Vine" side="left" >}}
+### Adding a series
 
 Series come from [Comic Vine](https://comicvine.gamespot.com/). Search, tick the results you want, and they're added with their issue lists, covers and dates. Several results can also be combined into one series.
+{{< /feature >}}
 
-![Searching Comic Vine](comic-vine-search.png)
-
-## Adding issues by photo
+{{< feature img="result-matching.png" alt="A photo of a bagged comic next to the cover it matched" side="right" >}}
+### Adding issues by photo
 
 Take photos of your comics, upload them, and the recognition service compares each photo against the covers of every issue in the series.
 
 It uses OpenCV's AKAZE feature matching, which works from distinctive points in the image rather than the whole picture, so a comic still in its bag and photographed on a table can be matched. Each result comes with a confidence score.
+{{< /feature >}}
 
-![A photo of a bagged comic next to the cover it matched](result-matching.png)
+{{< feature img="processing-status.png" alt="Processing status" side="left" >}}
+### A whole stack at once
 
 With a whole stack of photos you get a bulk review. High-confidence matches can be accepted in one go, and the rest you check by hand.
 
-![Bulk review of 19 photos](comic-selection-1.png)
-
 Matching runs in the background, and you can watch each job's progress.
+{{< /feature >}}
 
-![Processing status](processing-status.png)
+![Bulk review of 19 photos](comic-selection-1.png)
 
 ## Your collection
 
+{{< feature img="comics-collection.webp" alt="My copies of Absolute Wonder Woman, with read status" side="right" >}}
 Each series page shows the issues you own with their covers and release dates. Every issue carries its condition grade and whether you've read it, and the next unread issue is marked so you know where to pick up.
-
-![My copies of Absolute Wonder Woman, with read status](comics-collection.webp)
+{{< /feature >}}
 
 ## Tracking the gaps
 
@@ -52,13 +57,12 @@ With the issue lists from Comic Vine, the app knows what you don't have. The Mis
 
 ![Missing issues by series](missing-issues.png)
 
-Series get reverified every so often, and new issues that turn up land on the Releases page, grouped by month.
+Series get reverified every so often, and new issues that turn up land on the Releases page, grouped by month. The Stats page has the overall picture. Right now that's 78 series and 610 issues across 7 publishers.
 
-![New releases I don't have yet](live-releases.png)
-
-The Stats page has the overall picture. Right now that's 78 series and 610 issues across 7 publishers.
-
-![Collection stats](live-stats.png)
+{{< grid cols="2" >}}
+live-releases.png | New releases I don't have yet
+live-stats.png | Collection stats
+{{< /grid >}}
 
 ## How it's built
 
