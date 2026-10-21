@@ -3,7 +3,7 @@ title: Bringing Chapter Rewind Back to Season 2
 description: The Definitive Series quietly turned off rewind in The Walking Dead Season 2. I found the switch in the menu script and turned it back on.
 slug: twd-season-2-rewind
 date: 2026-10-19
-featureimage: cover.png
+featureimage: cover.webp
 imagePosition: "50% 50%"
 categories:
     - Game Modding
