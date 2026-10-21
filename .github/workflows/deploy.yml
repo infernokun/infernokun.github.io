@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        permissions:
+            # Lets the deploy step push the built site to the gh-pages branch.
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Cache Hugo resources
+              uses: actions/cache@v4
+              with:
+                  path: resources
+                  key: hugo-resources-${{ hashFiles('go.sum') }}
+
+            - uses: actions/setup-go@v5
+              with:
+                  go-version-file: go.mod
+
+            - name: Set up Hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: "0.168.0"
+                  extended: true
+
+            - name: Build
+              run: hugo --minify --gc
+
+            # Pull requests only build, so a broken change shows up before it is merged.
+            - name: Deploy
+              if: github.event_name != 'pull_request'
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: gh-pages
+                  folder: public
+                  clean: true
+                  single-commit: true

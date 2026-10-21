@@ -1,0 +1,38 @@
+name: Update theme
+
+on:
+    schedule:
+        # Once a week, Monday 00:00 UTC
+        - cron: "0 0 * * 1"
+    workflow_dispatch:
+
+jobs:
+    update-theme:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-go@v5
+              with:
+                  go-version-file: go.mod
+
+            - name: Set up Hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: "0.168.0"
+                  extended: true
+
+            - name: Update theme
+              run: hugo mod get -u github.com/nunocoracao/blowfish/v2
+
+            - name: Tidy go.mod and go.sum
+              run: hugo mod tidy
+
+            - name: Commit changes
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: "Update the Blowfish theme"
